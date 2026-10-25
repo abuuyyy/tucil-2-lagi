@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mfn4x64h3a1r"]
+
+[ext_resource type="Script" uid="uid://dvp4x3taa5sf4" path="res://scripts/back.gd" id="1_mi6dp"]
+
+[node name="Button" type="Button" unique_id=585718310]
+offset_right = 86.0
+offset_bottom = 31.0
+text = "Back"
+script = ExtResource("1_mi6dp")
