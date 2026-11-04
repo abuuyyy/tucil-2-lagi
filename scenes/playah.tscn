@@ -391,6 +391,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tdp8"]
 radius = 35.057095
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px6iy"]
+size = Vector2(115, 147)
+
 [node name="playah" type="CharacterBody2D" unique_id=1305091646]
 y_sort_enabled = true
 collision_layer = 2
@@ -403,6 +406,7 @@ scale = Vector2(8.405, 8.405)
 sprite_frames = SubResource("SpriteFrames_px6iy")
 animation = &"attack_down"
 autoplay = "idle_down"
+frame = 1
 
 [node name="body" type="CollisionShape2D" parent="." unique_id=1266882278]
 position = Vector2(939, 564)
@@ -410,5 +414,13 @@ shape = SubResource("CircleShape2D_6tdp8")
 
 [node name="swing" type="AudioStreamPlayer2D" parent="." unique_id=1375359788]
 stream = ExtResource("3_j15mi")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1821912963]
+position = Vector2(893, 574)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=632526962]
+position = Vector2(47.5, 105.5)
+shape = SubResource("RectangleShape2D_px6iy")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

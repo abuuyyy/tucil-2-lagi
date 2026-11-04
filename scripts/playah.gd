@@ -4,8 +4,14 @@ const walk = 100.0
 const sprint = 150.0
 var cardinal_dir: Vector2 = Vector2.RIGHT
 var is_attack: bool = false
+var hitbox_offset: Vector2
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing: AudioStreamPlayer2D = $swing
+@onready var hitbox: Area2D = $hitbox
+
+
+func _ready() -> void:
+	hitbox_offset = hitbox.position
 
 #movement
 func _process(_delta: float) -> void:
@@ -22,6 +28,7 @@ func _process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	process_anim(cardinal_dir)
+	update_hitbox()
 	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Action1") and not is_attack:
@@ -58,3 +65,18 @@ func attack() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attack:
 		is_attack = false
+		
+#hitbox position
+func update_hitbox() -> void:
+	var x := hitbox_offset.x
+	var y := hitbox_offset.y
+	
+	match cardinal_dir:
+		Vector2.LEFT:
+			hitbox.position = Vector2(794, 439)
+		Vector2.RIGHT:
+			hitbox.position = Vector2(992, 439)
+		Vector2.UP:
+			hitbox.position = Vector2(895, 357)
+		Vector2.DOWN:
+			hitbox.position = Vector2(893, 574)

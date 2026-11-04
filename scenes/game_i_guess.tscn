@@ -350,6 +350,7 @@ process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="playah/Camera2D/volslide" unique_id=857056937]
+visible = false
 offset_left = -45.0
 offset_top = -41.0
 offset_right = 1969.0
