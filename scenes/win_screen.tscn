@@ -11,11 +11,7 @@ offset_right = 1930.0
 offset_bottom = 1088.0
 texture = ExtResource("1_wv5lq")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2009998768]
-stream = ExtResource("2_erk2x")
-autoplay = true
-
-[node name="quit" type="Button" parent="AudioStreamPlayer" unique_id=2088604221]
+[node name="quit" type="Button" parent="." unique_id=2088604221]
 offset_left = 800.0
 offset_top = 876.0
 offset_right = 1176.0
@@ -24,4 +20,8 @@ theme_override_font_sizes/font_size = 54
 text = "Quit"
 script = ExtResource("3_2l6cc")
 
-[connection signal="pressed" from="AudioStreamPlayer/quit" to="AudioStreamPlayer/quit" method="_on_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2009998768]
+stream = ExtResource("2_erk2x")
+autoplay = true
+
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
