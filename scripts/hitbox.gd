@@ -8,6 +8,11 @@ const breakable = [
 	Vector2i(6, 2) #Wheat
 ]
 
+
+
+
+
+
 @onready var player = get_parent()
 
 func execute_overlap_check() -> void:

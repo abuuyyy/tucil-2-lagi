@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d4e6a2raf4vk4"]
+
+[ext_resource type="Texture2D" uid="uid://hbck441sqlmq" path="res://assets/368-3687354_screen-red-vignette-parallel.png" id="1_j32k4"]
+
+[sub_resource type="Animation" id="Animation_rypa8"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oneRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0009999999, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j32k4"]
+resource_name = "decRed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oneRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5snp8"]
+resource_name = "decRed2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oneRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y3ekv"]
+resource_name = "decRed3"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oneRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uors0"]
+resource_name = "decRedFin"
+length = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oneRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0625, 0.125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3ekv"]
+_data = {
+&"RESET": SubResource("Animation_rypa8"),
+&"decRed": SubResource("Animation_j32k4"),
+&"decRed2": SubResource("Animation_5snp8"),
+&"decRed3": SubResource("Animation_y3ekv"),
+&"decRedFin": SubResource("Animation_uors0")
+}
+
+[node name="redMist" type="Node2D" unique_id=1355432913]
+
+[node name="oneRed" type="TextureRect" parent="." unique_id=102940836]
+offset_right = 1945.1138
+offset_bottom = 1094.0
+texture = ExtResource("1_j32k4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2321901]
+libraries/ = SubResource("AnimationLibrary_y3ekv")
