@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://di6cbs5o20o4w"]
+
+[ext_resource type="Script" uid="uid://bqlb50vnhv3uf" path="res://scripts/ogre.gd" id="1_v5ei5"]
+[ext_resource type="Texture2D" uid="uid://bmflpoe235xyi" path="res://assets/24446-2-shrek-file.png" id="1_w80oy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 11.18034
+
+[node name="Ogre" type="CharacterBody2D" unique_id=1215702501]
+script = ExtResource("1_v5ei5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1913040477]
+position = Vector2(1.9999999, -14.999998)
+scale = Vector2(0.06336206, 0.06235632)
+texture = ExtResource("1_w80oy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868331625]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=336441384]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+path_postprocessing = 1
+debug_enabled = true
