@@ -21,6 +21,6 @@ theme_override_font_sizes/font_size = 150
 text = "0:00"
 
 [node name="Timering" type="Timer" parent="." unique_id=2095511837]
-wait_time = 10.0
+wait_time = 210.0
 one_shot = true
 ignore_time_scale = true
