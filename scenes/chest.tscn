@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://delaqpginixid"]
+
+[ext_resource type="Texture2D" uid="uid://wmq5hfc1lw57" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="1_oii8l"]
+[ext_resource type="Script" uid="uid://bkjp783jwqy32" path="res://scripts/chest.gd" id="1_sy5e1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qr1j"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy5e1"]
+size = Vector2(14, 14)
+
+[node name="chest" type="Area2D" unique_id=105757443 node_paths=PackedStringArray("keep")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_sy5e1")
+keep = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=176024239]
+texture = ExtResource("1_oii8l")
+
+[node name="Label" type="Label" parent="." unique_id=1150025481]
+offset_left = -3.0
+offset_top = -25.0
+offset_right = 6.0
+offset_bottom = -8.0
+text = "0"
+label_settings = SubResource("LabelSettings_8qr1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=268447678]
+shape = SubResource("RectangleShape2D_sy5e1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://r7j2p4hpupml"]
 
+[ext_resource type="Script" uid="uid://657d1fhgdjtb" path="res://scripts/wheat_item.gd" id="1_bnuat"]
 [ext_resource type="Texture2D" uid="uid://brd870c3hfulb" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="1_xygh0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnuat"]
 radius = 4.0
 
-[node name="Area2D" type="Area2D" unique_id=1544651894]
+[node name="wheat_item" type="Area2D" unique_id=1544651894]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_bnuat")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866504061]
 texture = ExtResource("1_xygh0")

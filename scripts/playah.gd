@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	process_anim(cardinal_dir)
 	update_hitbox()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Action1") and not is_attack:
 		attack()
 		hitbox.execute_overlap_check()

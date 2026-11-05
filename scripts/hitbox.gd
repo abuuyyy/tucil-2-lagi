@@ -23,7 +23,7 @@ func execute_overlap_check() -> void:
 				var tilemap_pos: Vector2 = tilemap.to_global(tilemap.map_to_local(map_coords))
 				if atlas == Vector2i(4, 2):
 					spawn_carrot(tilemap_pos)
-				elif atlas == Vector2i(6, 2):
+				elif  atlas == Vector2i(6, 2):
 					spawn_wheat(tilemap_pos)
 				tilemap.set_cell(map_coords, -1)
 
