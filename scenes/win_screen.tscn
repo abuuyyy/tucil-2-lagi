@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://4cntupu1g3xu"]
+
+[ext_resource type="Texture2D" uid="uid://8rclshvv0yvg" path="res://assets/Win Screen.jpg" id="1_wv5lq"]
+[ext_resource type="AudioStream" uid="uid://ddtjwbcvndagq" path="res://assets/music/Stage Win (Super Mario) - Sound Effect HD.mp3" id="2_erk2x"]
+
+[node name="Win Screen!" type="Node2D" unique_id=1670504294]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1868384359]
+offset_right = 1930.0
+offset_bottom = 1088.0
+texture = ExtResource("1_wv5lq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2009998768]
+stream = ExtResource("2_erk2x")
+autoplay = true
