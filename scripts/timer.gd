@@ -18,10 +18,7 @@ func time_left_before_agony():
 	
 	
 func levels_of_agony():
-	if timering.time_left < 4:
-		redMist.show()
-		decRed.play("decRedFin")
-	elif timering.time_left < 11:
+	if timering.time_left < 11:
 		redMist.show()
 		decRed.play("decRed3")
 	elif timering.time_left < 21:
