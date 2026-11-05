@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	process_anim(cardinal_dir)
 	update_hitbox()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Action1") and not is_attack:
 		attack()
 		hitbox.execute_overlap_check()
@@ -75,11 +75,11 @@ func update_hitbox() -> void:
 	
 	match cardinal_dir:
 		Vector2.LEFT:
-			hitbox.position = Vector2(-x-51, y)
+			hitbox.position = Vector2(-x-46, y)
 		Vector2.RIGHT:
-			hitbox.position = Vector2(x, y)
+			hitbox.position = Vector2(x-7, y)
 		Vector2.UP:
-			hitbox.position = Vector2(y+20, -x-75)
+			hitbox.position = Vector2(y-37, -x-40)
 		Vector2.DOWN:
-			hitbox.position = Vector2(-y-79, x)
+			hitbox.position = Vector2(-y-22, x)
 	

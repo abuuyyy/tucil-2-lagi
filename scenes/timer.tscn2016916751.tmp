@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cmg5quku6ybm1"]
+
+[ext_resource type="Script" uid="uid://sn5kl4n0kcm0" path="res://scripts/timer.gd" id="1_srplv"]
+
+[node name="Timer" type="Node2D" unique_id=1402330331]
+script = ExtResource("1_srplv")
+
+[node name="timeShown" type="Label" parent="." unique_id=1109685763]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_right = 266.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Timering" type="Timer" parent="." unique_id=2095511837]
+wait_time = 180.0
+one_shot = true
+ignore_time_scale = true

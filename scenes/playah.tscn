@@ -397,7 +397,7 @@ size = Vector2(77, 121.5)
 
 [node name="playah" type="CharacterBody2D" unique_id=1305091646]
 y_sort_enabled = true
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_8cms1")
 
@@ -416,7 +416,7 @@ shape = SubResource("CircleShape2D_6tdp8")
 stream = ExtResource("3_j15mi")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1821912963]
-position = Vector2(75, -50)
+position = Vector2(75, 10)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_y5ear")

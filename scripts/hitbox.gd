@@ -8,6 +8,11 @@ const breakable = [
 	Vector2i(6, 2) #Wheat
 ]
 
+
+
+
+
+
 @onready var player = get_parent()
 
 func execute_overlap_check() -> void:
@@ -15,7 +20,7 @@ func execute_overlap_check() -> void:
 	for body in overlap:
 		if body is TileMapLayer:
 			var tilemap: TileMapLayer = body
-			var impact: Vector2 = player.global_position
+			var impact: Vector2 = global_position
 			var map_coords: Vector2i = tilemap.local_to_map(tilemap.to_local(impact))
 			var atlas: Vector2i = tilemap.get_cell_atlas_coords(map_coords)
 			
@@ -23,7 +28,7 @@ func execute_overlap_check() -> void:
 				var tilemap_pos: Vector2 = tilemap.to_global(tilemap.map_to_local(map_coords))
 				if atlas == Vector2i(4, 2):
 					spawn_carrot(tilemap_pos)
-				elif atlas == Vector2i(6, 2):
+				elif  atlas == Vector2i(6, 2):
 					spawn_wheat(tilemap_pos)
 				tilemap.set_cell(map_coords, -1)
 
