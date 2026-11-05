@@ -8,6 +8,7 @@ var hitbox_offset: Vector2
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing: AudioStreamPlayer2D = $swing
 @onready var hitbox: Area2D = $hitbox
+@onready var objects: TileMapLayer = $"../objects"
 
 
 func _ready() -> void:
@@ -33,6 +34,7 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Action1") and not is_attack:
 		attack()
+		hitbox.execute_overlap_check()
 	if is_attack:
 		velocity = Vector2.ZERO
 		return
@@ -73,10 +75,11 @@ func update_hitbox() -> void:
 	
 	match cardinal_dir:
 		Vector2.LEFT:
-			hitbox.position = Vector2(794, 439)
+			hitbox.position = Vector2(-x-51, y)
 		Vector2.RIGHT:
-			hitbox.position = Vector2(992, 439)
+			hitbox.position = Vector2(x, y)
 		Vector2.UP:
-			hitbox.position = Vector2(895, 357)
+			hitbox.position = Vector2(y+20, -x-75)
 		Vector2.DOWN:
-			hitbox.position = Vector2(893, 574)
+			hitbox.position = Vector2(-y-79, x)
+	
