@@ -1,4 +1,6 @@
 class_name Player extends CharacterBody2D
+@onready var time = $"Camera2D/gameui/Timer/Timering"
+
 
 const walk = 100.0
 const sprint = 150.0
@@ -83,3 +85,9 @@ func update_hitbox() -> void:
 		Vector2.DOWN:
 			hitbox.position = Vector2(-y-22, x)
 	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if time.time_left == 0:
+		if area.is_in_group("ogre"):
+			get_tree().change_scene_to_file("res://scenes/loser.tscn")

@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 			velocity = nav_point_direction * movement_speed * delta
 		move_and_slide()
 
-
 func _on_timer_timeout() -> void:
 	if $NavigationAgent2D.target_position != Goal.global_position:
 		$NavigationAgent2D.target_position = Goal.global_position

@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if chest.keep == 100:
+	if chest.keep > 100:
 		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://4j44j4sh50k4"]
+
+[ext_resource type="Texture2D" uid="uid://ftd8yspe8koo" path="res://assets/4.jpg" id="1_2v0vm"]
+[ext_resource type="AudioStream" uid="uid://bv8nxvu7vo6df" path="res://assets/music/Sad Trombone - Sound Effect (HD).mp3" id="2_f5sew"]
+
+[node name="loser" type="Node2D" unique_id=682536278]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=762896733]
+stream = ExtResource("2_f5sew")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=323561704]
+offset_right = 1960.8889
+offset_bottom = 1103.0
+texture = ExtResource("1_2v0vm")

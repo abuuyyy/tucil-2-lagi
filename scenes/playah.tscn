@@ -395,6 +395,9 @@ radius = 31.320919
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px6iy"]
 size = Vector2(77, 121.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 33.06055
+
 [node name="playah" type="CharacterBody2D" unique_id=1305091646]
 y_sort_enabled = true
 collision_layer = 2
@@ -426,5 +429,11 @@ metadata/_edit_group_ = true
 position = Vector2(28.5, 51.25)
 shape = SubResource("RectangleShape2D_px6iy")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=618850204 groups=["playah"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1384851103]
+shape = SubResource("CircleShape2D_g4v7s")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hitbox" to="hitbox" method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

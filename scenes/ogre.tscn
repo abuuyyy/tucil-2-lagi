@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 11.18034
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 12.0
+
 [node name="Ogre" type="CharacterBody2D" unique_id=1215702501]
 script = ExtResource("1_v5ei5")
 
@@ -22,3 +25,8 @@ path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
 debug_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1237630476 groups=["ogre"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1194482172]
+shape = SubResource("CircleShape2D_yf5fn")
