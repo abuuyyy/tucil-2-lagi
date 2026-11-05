@@ -390,15 +390,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tdp8"]
-radius = 35.057095
+radius = 31.320919
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px6iy"]
 size = Vector2(77, 121.5)
 
 [node name="playah" type="CharacterBody2D" unique_id=1305091646]
 y_sort_enabled = true
-collision_layer = 2
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_8cms1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438703938]
@@ -418,7 +418,7 @@ stream = ExtResource("3_j15mi")
 [node name="hitbox" type="Area2D" parent="." unique_id=1821912963]
 position = Vector2(75, -50)
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 script = ExtResource("4_y5ear")
 metadata/_edit_group_ = true
 

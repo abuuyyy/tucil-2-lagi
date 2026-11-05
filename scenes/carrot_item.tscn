@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bfc7uugndyc7r"]
+
+[ext_resource type="Texture2D" uid="uid://brd870c3hfulb" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="1_4mnya"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6ga1"]
+radius = 3.0
+
+[node name="carrot_item" type="Area2D" unique_id=238352884]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=587260401]
+texture = ExtResource("1_4mnya")
+region_enabled = true
+region_rect = Rect2(64.565, 47.84, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237923233]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_k6ga1")
