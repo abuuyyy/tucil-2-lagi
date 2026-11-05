@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ds1a061nfj3al" path="res://scenes/playah.tscn" id="1_0etqs"]
 [ext_resource type="Script" uid="uid://cw4emu3jic7k3" path="res://scripts/game_i_guess.gd" id="1_6nhsp"]
-[ext_resource type="AudioStream" uid="uid://bbqtevs66vhv1" path="res://assets/music/kakariko village snes.mp3" id="2_k3xq5"]
 [ext_resource type="Texture2D" uid="uid://b3cl3em40owou" path="res://assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="3_pu8c0"]
 [ext_resource type="Texture2D" uid="uid://c234k82cvt4m1" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/Fences.png" id="3_qc7xj"]
 [ext_resource type="Texture2D" uid="uid://br7bj37r8g0i6" path="res://assets/Cute_Fantasy_Free/Outdoor decoration/House_1_Wood_Base_Blue.png" id="4_21p6p"]
@@ -29,6 +28,7 @@
 [ext_resource type="Script" uid="uid://c1547f13vm7dj" path="res://scripts/h_slider_2.gd" id="20_na33v"]
 [ext_resource type="PackedScene" uid="uid://delaqpginixid" path="res://scenes/chest.tscn" id="25_awquh"]
 [ext_resource type="PackedScene" uid="uid://cmg5quku6ybm1" path="res://scenes/timer.tscn" id="26_il8rw"]
+[ext_resource type="AudioStream" uid="uid://dtjdsu313te0h" path="res://assets/music/Dream-Speedrun-Music.ogg" id="28_qhu50"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qhu50"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -476,6 +476,9 @@ font_size = 78
 font_size = 32
 font_color = Color(0.84313726, 0.011764706, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_8qr1j"]
+font_size = 22
+
 [sub_resource type="LabelSettings" id="LabelSettings_px6iy"]
 font_size = 94
 
@@ -527,14 +530,6 @@ limit_bottom = 1080
 
 [node name="gameui" type="CanvasLayer" parent="playah/Camera2D" unique_id=1086897345]
 
-[node name="setting" type="Button" parent="playah/Camera2D/gameui" unique_id=1200359947]
-offset_left = 1684.0
-offset_top = 51.0
-offset_right = 1850.0
-offset_bottom = 114.333496
-text = "Settings"
-script = ExtResource("19_4dakp")
-
 [node name="bag" type="Sprite2D" parent="playah/Camera2D/gameui" unique_id=1082011529]
 position = Vector2(134, 950.00006)
 scale = Vector2(0.38375896, 0.37905818)
@@ -564,6 +559,29 @@ position = Vector2(212, 96)
 
 [node name="redMist" parent="playah/Camera2D/gameui/Timer" unique_id=1355432913 instance=ExtResource("18_qqkf1")]
 position = Vector2(-211, -98)
+scale = Vector2(1.0412055, 1.0321803)
+
+[node name="setting" type="Button" parent="playah/Camera2D/gameui" unique_id=1200359947]
+offset_left = 1684.0
+offset_top = 51.0
+offset_right = 1850.0
+offset_bottom = 114.333496
+text = "Settings"
+script = ExtResource("19_4dakp")
+
+[node name="CONTROLS" type="Label" parent="playah/Camera2D/gameui" unique_id=1965746916]
+offset_left = 39.0
+offset_top = 179.0
+offset_right = 1503.0
+offset_bottom = 488.0
+text = "WASD : Move
+E : Attack
+Hold Shift: Sprint
+
+Objective:
+Grab all of the crops from the farm before the time runs out, 
+or you become ogre food!"
+label_settings = SubResource("LabelSettings_8qr1j")
 
 [node name="volslide" type="CanvasLayer" parent="playah/Camera2D" unique_id=269503777]
 process_mode = 3
@@ -620,17 +638,6 @@ text = "BGM"
 label_settings = SubResource("LabelSettings_px6iy")
 script = SubResource("GDScript_4dakp")
 
-[node name="label_sfx" type="Label" parent="playah/Camera2D/volslide" unique_id=1947796434]
-visible = false
-offset_left = 446.0
-offset_top = 502.0
-offset_right = 850.0
-offset_bottom = 763.0
-text = "SFX
-"
-label_settings = SubResource("LabelSettings_px6iy")
-script = SubResource("GDScript_4dakp")
-
 [node name="back" type="Button" parent="playah/Camera2D/volslide" unique_id=1239288142]
 offset_left = 41.0
 offset_top = 1006.0
@@ -643,11 +650,10 @@ script = ExtResource("20_0yejd")
 position = Vector2(952, 476)
 Goal = NodePath("../playah")
 
-[node name="KakarikoVillageSnes" type="AudioStreamPlayer2D" parent="." unique_id=585722377]
+[node name="dream" type="AudioStreamPlayer2D" parent="." unique_id=585722377]
 process_mode = 3
 position = Vector2(950, 513)
-stream = ExtResource("2_k3xq5")
-volume_db = 24.0
+stream = ExtResource("28_qhu50")
 autoplay = true
 bus = &"BGM"
 

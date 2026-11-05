@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://grcdgxfotysn"]
+
+[ext_resource type="Texture2D" uid="uid://bia76yumhoeq" path="res://assets/Far,.png" id="1_thu50"]
+[ext_resource type="Script" uid="uid://dsrm4god3buqn" path="res://scripts/start.gd" id="2_m7x51"]
+[ext_resource type="Script" uid="uid://cv2r6g3001384" path="res://scripts/quit.gd" id="3_m7x51"]
+[ext_resource type="AudioStream" uid="uid://bbqtevs66vhv1" path="res://assets/music/kakariko village snes.mp3" id="4_h61rw"]
+
+[node name="start_menu" type="Node2D" unique_id=2011103152]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=80273035]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 2068.0
+offset_bottom = 1143.0
+texture = ExtResource("1_thu50")
+
+[node name="start" type="Button" parent="." unique_id=648293307]
+offset_left = 773.0
+offset_top = 532.0
+offset_right = 1149.0
+offset_bottom = 693.0
+theme_override_font_sizes/font_size = 54
+text = "START GAME!"
+script = ExtResource("2_m7x51")
+
+[node name="quit" type="Button" parent="." unique_id=1166278101]
+offset_left = 773.0
+offset_top = 784.0
+offset_right = 1149.0
+offset_bottom = 945.0
+theme_override_font_sizes/font_size = 54
+text = "Quit"
+script = ExtResource("3_m7x51")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1824332908]
+stream = ExtResource("4_h61rw")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="start" to="start" method="_on_pressed"]
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
