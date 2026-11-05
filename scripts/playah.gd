@@ -81,7 +81,7 @@ func update_hitbox() -> void:
 		Vector2.RIGHT:
 			hitbox.position = Vector2(x-7, y)
 		Vector2.UP:
-			hitbox.position = Vector2(y-37, -x-40)
+			hitbox.position = Vector2(y-37, -x-10)
 		Vector2.DOWN:
 			hitbox.position = Vector2(-y-22, x)
 	
