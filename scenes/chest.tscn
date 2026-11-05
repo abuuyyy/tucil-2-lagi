@@ -10,12 +10,12 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy5e1"]
 size = Vector2(14, 14)
 
-[node name="chest" type="Area2D" unique_id=105757443 node_paths=PackedStringArray("keep")]
+[node name="chest" type="Area2D" unique_id=105757443 node_paths=PackedStringArray("depo")]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_sy5e1")
-keep = NodePath("Label")
+depo = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=176024239]
 texture = ExtResource("1_oii8l")
