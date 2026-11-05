@@ -20,7 +20,7 @@ func execute_overlap_check() -> void:
 	for body in overlap:
 		if body is TileMapLayer:
 			var tilemap: TileMapLayer = body
-			var impact: Vector2 = player.global_position
+			var impact: Vector2 = global_position
 			var map_coords: Vector2i = tilemap.local_to_map(tilemap.to_local(impact))
 			var atlas: Vector2i = tilemap.get_cell_atlas_coords(map_coords)
 			
