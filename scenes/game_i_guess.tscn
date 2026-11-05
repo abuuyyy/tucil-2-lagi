@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://cskm84mw3d0fk" path="res://scripts/max.gd" id="20_awquh"]
 [ext_resource type="Script" uid="uid://c1cnjhdnuginy" path="res://scripts/label.gd" id="20_m2co1"]
 [ext_resource type="Script" uid="uid://c1547f13vm7dj" path="res://scripts/h_slider_2.gd" id="20_na33v"]
+[ext_resource type="Shader" uid="uid://oc0ufb5ji7dy" path="res://scenes/game_i_guess.gdshader" id="21_54qbm"]
 [ext_resource type="PackedScene" uid="uid://delaqpginixid" path="res://scenes/chest.tscn" id="25_awquh"]
 [ext_resource type="PackedScene" uid="uid://cmg5quku6ybm1" path="res://scenes/timer.tscn" id="26_il8rw"]
 [ext_resource type="AudioStream" uid="uid://dtjdsu313te0h" path="res://assets/music/Dream-Speedrun-Music.ogg" id="28_qhu50"]
@@ -476,6 +477,10 @@ font_size = 78
 font_size = 32
 font_color = Color(0.84313726, 0.011764706, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54qbm"]
+shader = ExtResource("21_54qbm")
+shader_parameter/blur_amount = 0.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_8qr1j"]
 font_size = 22
 
@@ -553,6 +558,14 @@ offset_bottom = 940.0
 text = "Too much items! Store your items in the chest!"
 label_settings = SubResource("LabelSettings_k6ga1")
 script = ExtResource("20_awquh")
+
+[node name="ColorRect" type="ColorRect" parent="playah/Camera2D/gameui" unique_id=716117735]
+material = SubResource("ShaderMaterial_54qbm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Timer" parent="playah/Camera2D/gameui" unique_id=1402330331 instance=ExtResource("26_il8rw")]
 position = Vector2(212, 96)
