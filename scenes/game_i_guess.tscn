@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://sjr8s1s4snd6" path="res://assets/Untitled design (2).png" id="19_3bovv"]
 [ext_resource type="Script" uid="uid://ch20ts4sa5uux" path="res://scripts/setting.gd" id="19_4dakp"]
 [ext_resource type="Script" uid="uid://dvp4x3taa5sf4" path="res://scripts/back.gd" id="20_0yejd"]
+[ext_resource type="Script" uid="uid://ce72ypvqfsk6p" path="res://scripts/volslide.gd" id="20_m2co1"]
 [ext_resource type="Script" uid="uid://cskm84mw3d0fk" path="res://scripts/max.gd" id="20_awquh"]
 [ext_resource type="Script" uid="uid://c1cnjhdnuginy" path="res://scripts/label.gd" id="20_m2co1"]
 [ext_resource type="Script" uid="uid://c1547f13vm7dj" path="res://scripts/h_slider_2.gd" id="20_na33v"]
@@ -568,6 +569,7 @@ position = Vector2(-211, -98)
 [node name="volslide" type="CanvasLayer" parent="playah/Camera2D" unique_id=269503777]
 process_mode = 3
 visible = false
+script = ExtResource("20_m2co1")
 
 [node name="ColorRect" type="ColorRect" parent="playah/Camera2D/volslide" unique_id=857056937]
 offset_left = -45.0
@@ -630,6 +632,29 @@ text = "SFX
 "
 label_settings = SubResource("LabelSettings_px6iy")
 script = SubResource("GDScript_4dakp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="playah/Camera2D/volslide" unique_id=1477645068]
+offset_left = 715.0
+offset_top = 568.0
+offset_right = 1315.0
+offset_bottom = 638.0
+alignment = 1
+
+[node name="exit_button" type="Button" parent="playah/Camera2D/volslide/HBoxContainer" unique_id=44812282]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "exit"
+
+[node name="reset_button" type="Button" parent="playah/Camera2D/volslide/HBoxContainer" unique_id=680495609]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "reset
+"
+
+[node name="mute_button" type="Button" parent="playah/Camera2D/volslide/HBoxContainer" unique_id=185984405]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "mute"
 
 [node name="back" type="Button" parent="playah/Camera2D/volslide" unique_id=1239288142]
 offset_left = 41.0
