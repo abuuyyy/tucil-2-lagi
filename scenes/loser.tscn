@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ftd8yspe8koo" path="res://assets/4.jpg" id="1_2v0vm"]
 [ext_resource type="AudioStream" uid="uid://bv8nxvu7vo6df" path="res://assets/music/Sad Trombone - Sound Effect (HD).mp3" id="2_f5sew"]
+[ext_resource type="Script" uid="uid://cv2r6g3001384" path="res://scripts/quit.gd" id="3_nlf5r"]
+[ext_resource type="Script" uid="uid://dtlrfp87a473k" path="res://scripts/retry.gd" id="4_yhdq8"]
 
 [node name="loser" type="Node2D" unique_id=682536278]
 
@@ -13,3 +15,24 @@ autoplay = true
 offset_right = 1960.8889
 offset_bottom = 1103.0
 texture = ExtResource("1_2v0vm")
+
+[node name="quit" type="Button" parent="." unique_id=2118796852]
+offset_left = 1041.0
+offset_top = 833.0
+offset_right = 1417.0
+offset_bottom = 994.0
+theme_override_font_sizes/font_size = 54
+text = "Quit"
+script = ExtResource("3_nlf5r")
+
+[node name="Button" type="Button" parent="." unique_id=1004278511]
+offset_left = 517.0
+offset_top = 834.0
+offset_right = 892.0
+offset_bottom = 995.0
+theme_override_font_sizes/font_size = 56
+text = "Retry"
+script = ExtResource("4_yhdq8")
+
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

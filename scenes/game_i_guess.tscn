@@ -579,7 +579,8 @@ E : Attack
 Hold Shift: Sprint
 
 Objective:
-Grab all of the crops from the farm before the time runs out, 
+Grab 100 of your crops from the farm, collect them 
+to the chest before the time runs out, 
 or you become ogre food!"
 label_settings = SubResource("LabelSettings_8qr1j")
 
