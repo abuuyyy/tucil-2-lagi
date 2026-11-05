@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://8rclshvv0yvg" path="res://assets/Win Screen.jpg" id="1_wv5lq"]
 [ext_resource type="AudioStream" uid="uid://ddtjwbcvndagq" path="res://assets/music/Stage Win (Super Mario) - Sound Effect HD.mp3" id="2_erk2x"]
+[ext_resource type="Script" uid="uid://cv2r6g3001384" path="res://scripts/quit.gd" id="3_2l6cc"]
 
 [node name="Win Screen!" type="Node2D" unique_id=1670504294]
 
@@ -13,3 +14,14 @@ texture = ExtResource("1_wv5lq")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2009998768]
 stream = ExtResource("2_erk2x")
 autoplay = true
+
+[node name="quit" type="Button" parent="AudioStreamPlayer" unique_id=2088604221]
+offset_left = 800.0
+offset_top = 876.0
+offset_right = 1176.0
+offset_bottom = 1037.0
+theme_override_font_sizes/font_size = 54
+text = "Quit"
+script = ExtResource("3_2l6cc")
+
+[connection signal="pressed" from="AudioStreamPlayer/quit" to="AudioStreamPlayer/quit" method="_on_pressed"]
